@@ -5,7 +5,7 @@ from urllib.parse import urljoin
 from concurrent.futures import ThreadPoolExecutor
 
 
-
+#replace the website url here
 url = 'https://www.annapurnaencounter.com/travel-guide/the-majestic-mountains-of-the-annapurna-range'
 os.makedirs("Scraped_images", exist_ok=True)
 
@@ -40,7 +40,7 @@ def get_img_srcs(img, base_url):
 HEADERS = {
         "User-Agent": "Mozilla/5.0"
     }
-def img_scrap(url):
+def scrape_img(url):
     try:
         response = requests.get(url, headers=HEADERS, timeout=10)
         soup = BeautifulSoup(response.content, 'html.parser')
@@ -53,10 +53,10 @@ def img_scrap(url):
             src_all.extend(get_img_srcs(img_tag, url))
                     
 
-            #validate src_img that came from above extractor function
+        #validate src_img that came from above extractor function
         src_valid = []
         for src in src_all:
-            if src.lower().endswith(('.jpg', '.jpeg')): #add '.png', '.svg' here if needed
+            if src.lower().endswith(('.jpg', '.jpeg', '.png')): #add '.svg' here if needed
                 src_valid.append(src)
                 print(f"Cleaned Url: {src}")
             else:
@@ -80,6 +80,6 @@ def download(src_valid):
     except Exception:
         print(f"Couldn't download the image, {Exception}")
    
-
-img_scrap(url)
-
+if __name__ == "__main__":
+    scrape_img(url)
+ 
