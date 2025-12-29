@@ -23,36 +23,45 @@ A Python tool to scrape images from a webpage, supporting multiple image sources
 
 - Python 3.8+  
 - Install dependencies from `requirements.txt`:
-- Run: (pip install -r requirements.txt) in the terminal
+- Run in the terminal:
+```pip install -r requirements.txt ```
 
 ## Usage (direct standalone running)
 - Clone the repository
 - Create a virtual environment:
 
     - Windows:
+    ```
     python -m venv myvenv
-    myvenv\Scripts\activate
+    myvenv\Scripts\activate 
+    ```
 
     - Linux/Mac:
+    ```
     source myvenv/bin/activate
+    ```
 
 - Install required packages
+```
 pip install -r requirements.txt
+```
 
 - Run the project
+```
 python image_extractor.py
+```
 
 ## Usage (Integration on a project)
 
 - Place the scraper script in your project folder.
 - Run the script:
-
+```
 import image_extractor as scrape
 
 
 url = "https://example.com/page-with-images"
 scrape.scrape_img(url)
-
+```
 
 - Images are saved automatically in a folder named Scraped_images.
 
