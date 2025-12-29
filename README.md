@@ -9,7 +9,7 @@ A Python tool to scrape images from a webpage, supporting multiple image sources
 - Downloads images with `.jpg`, `.jpeg`, or `.png` extensions.  
 - Uses `ThreadPoolExecutor` for faster concurrent downloads.  
 - Filters invalid URLs and logs rejected images.  
-- Saves images in a dedicated directory with unique filenames.
+- Saves images in a dedicated directory.
 
 ## My Objetives
 
@@ -27,7 +27,11 @@ A Python tool to scrape images from a webpage, supporting multiple image sources
 ```pip install -r requirements.txt ```
 
 ## Usage (direct standalone running)
-- Clone the repository
+- Clone this repository
+```
+git clone https://github.com/AnkitAcharya01/Web_Image_extractor.git
+cd Web_Image_extractor
+```
 - Create a virtual environment:
 
     - Windows:
@@ -38,6 +42,7 @@ A Python tool to scrape images from a webpage, supporting multiple image sources
 
     - Linux/Mac:
     ```
+    python -m venv myvenv
     source myvenv/bin/activate
     ```
 
@@ -46,7 +51,12 @@ A Python tool to scrape images from a webpage, supporting multiple image sources
 pip install -r requirements.txt
 ```
 
-- Run the project
+- Run the project (change the url if you like)
+```
+url = 'https://www.example.com'
+```
+
+
 ```
 python image_extractor.py
 ```
@@ -69,7 +79,8 @@ scrape.scrape_img(url)
 
 ## Notes
 
-- The scraper downloads only `.jpg`, `.jpeg` and `.png` images.  
+- The scraper downloads only `.jpg`, `.jpeg` and `.png` images. 
+- Can be easily modified to add other formats.
 - Thread count can be adjusted to control speed and server load.
 - Always respect the website’s terms of service and robots.txt.
 
